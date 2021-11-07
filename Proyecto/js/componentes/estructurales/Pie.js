@@ -1,0 +1,1 @@
+"use strict";class Pie extends React.Component{render(){return React.createElement("footer",{className:"container-fluid h-auto py-5 px-5 bkg-principal txt-blanco"},React.createElement("h5",{className:"txt-centrado m-auto"},"© ScytheSoft 2021"),React.createElement("h6",{className:"txt-centrado mx-auto mt-2"},"Jesús G.O. (Gutiérrez Ornelas José de Jesús)"))}}
