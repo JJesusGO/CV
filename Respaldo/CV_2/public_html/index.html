@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jesus GO</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Pagina -->
+        
+        <meta name="description" content="CV"/>
+        <meta name="keywords" content="CV"/>
+        <meta name="author" content="Gutierrez Ornelas Jose de Jesus">
+        
+        <!-- Manifesto -->
+        <link rel="manifest" href="./manifest.json">
+        
+        <!-- Dependencias -->
+        <!-- Fuentes -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inconsolata&display=swap">
+        
+        <!-- React -->
+        <script src="https://unpkg.com/react@15.4.1/dist/react.min.js"></script>
+        <script src="https://unpkg.com/react-dom@15.4.1/dist/react-dom.min.js"></script>
+
+        <!-- React Router -->        
+        <script src="https://unpkg.com/react-router/umd/react-router.min.js"></script>
+        <script src="https://unpkg.com/react-router-dom/umd/react-router-dom.min.js"></script>
+        
+        <!--Librerias-->
+        
+         <!-- Interactividad -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js"></script>  
+        
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>  
+        <link   rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/rellax/1.12.1/rellax.min.js"></script>
+        
+        <!-- Bootstrap4 -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>        
+        
+        
+        <!-- CSS -->
+        <link rel="stylesheet" href="/css/animaciones.css">
+        <link rel="stylesheet" href="/css/principal.css">
+        
+        
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">    
+        
+        <!-- Panel de carga -->  
+        <div id="ventana-carga">
+            <div class="container-fluid p-0 mt-5">
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="lds-ellipsis">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <h3 class="m-auto txt-centrado txt-blanco">Cargando</h3>
+            </div>
+        </div>
+        
+        <!-- Aplicacion raiz -->  
+        <div id="ventana-app"></div>               
+        
+        <!-- Componentes -->        
+        <script src="/js/modelo/Modelo.js"></script>
+        
+        <script src="/js/componentes/basicos/Herramientas.js"></script>
+        <script src="/js/componentes/basicos/Boton.js"></script>
+        <script src="/js/componentes/basicos/Columnas.js"></script>
+        <script src="/js/componentes/basicos/Entradas.js"></script>
+        <script src="/js/componentes/basicos/Panel.js"></script>
+        <script src="/js/componentes/basicos/Modal.js"></script>
+        
+        <script src="/js/componentes/compuestos/Funcionales.js"></script>
+        <script src="/js/componentes/compuestos/Elemento.js"></script>
+        <script src="/js/componentes/compuestos/Fila.js"></script>
+        <script src="/js/componentes/compuestos/Formulario.js"></script>
+        <script src="/js/componentes/compuestos/Paginas.js"></script>        
+        
+        <script src="/js/componentes/estructurales/Navegador.js"></script>      
+        <script src="/js/componentes/estructurales/Pie.js"></script>
+        <script src="/js/componentes/estructurales/PanelPrincipal.js"></script>     
+        <script src="/js/componentes/estructurales/PanelDescripcion.js"></script>     
+        <script src="/js/componentes/estructurales/PanelExperiencia.js"></script>     
+        <script src="/js/componentes/estructurales/PanelProyectos.js"></script>     
+        <script src="/js/componentes/estructurales/PanelPortafolioBlog.js"></script>     
+        <script src="/js/componentes/estructurales/PanelConocimientos.js"></script>     
+        <script src="/js/componentes/estructurales/PanelServicios.js"></script>     
+        <script src="/js/componentes/estructurales/PanelDescargarCV.js"></script>     
+        <script src="/js/componentes/estructurales/PanelContacto.js"></script>     
+        <script src="/js/componentes/estructurales/PanelExperienciaContenido.js"></script>     
+        
+        <script src="/js/componentes/paginas/Principal.js"></script>        
+        <script src="/js/componentes/paginas/Experiencia.js"></script>        
+        
+        <script src="/js/componentes/App.js"></script>
+        
+        <script src="/js/index.js"></script>
+    </body>
+</html>

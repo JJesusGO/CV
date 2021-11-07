@@ -1,0 +1,1 @@
+"use strict";class Pie extends React.Component{render(){return React.createElement("footer",{className:"container-fluid h-auto py-5 px-5 bkg-principal txt-blanco"},React.createElement("h6",{className:"txt-centrado m-auto"},"Copyright © ScytheSoft 2020"))}}

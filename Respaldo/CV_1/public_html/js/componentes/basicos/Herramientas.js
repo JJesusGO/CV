@@ -1,0 +1,1 @@
+"use strict";const PaletaColor={PRINCIPAL:0,SECUNDARIO:1,TERCIARIO:2,SUCCESS:3,ERROR:4,WARNING:5,INFO:6,BLANCO:7};function largoClamp(i,t){t&&(Array.isArray(t)?(i.minHeight=t[0],i.height=t[1],i.maxHeight=t[2]):i.height=t)}function anchoClamp(i,t){t&&(Array.isArray(t)?(i.minWidth=t[0],i.width=t[1],i.maxWidth=t[2]):i.width=t)}

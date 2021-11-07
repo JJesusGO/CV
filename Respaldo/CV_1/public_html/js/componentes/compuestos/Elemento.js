@@ -1,0 +1,1 @@
+"use strict";class Elemento extends React.Component{render(){let e=this.props.clases||"",s=this.props.index||0,t=this.props.elementos||[],n=null;return Array.isArray(t)&&(0!==t.length&&(s<0?s=0:s>=t.length&&(s=t.length-1)),n=t[s]),React.createElement("span",{className:e},n)}}

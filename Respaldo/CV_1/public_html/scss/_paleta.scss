@@ -1,0 +1,49 @@
+
+/*------------ COLORES ------------*/
+
+$color_fondo   : #ffffff;
+
+$color_blanco  : #ffffff;
+$color_negro   : #000000;
+
+$color_principal  : #095d7e;
+$color_secundario : #d57555;
+$color_terciario  : #90acd1; 
+
+$color_success    : #3ac97c; 
+$color_error      : #d73f30; 
+$color_warning    : #ebb20c; 
+$color_info       : #9d46cd;
+
+$color_imagen : #ebebeb;
+$color_form : rgba(213, 117, 85, 0.25);
+
+/*------------ PROPIEDADES ------------*/
+
+$borde_width       : 0.1rem;
+$borde_radio       : 8px;
+
+$padding_basico     : 1.5rem; //encabezado del ingreso
+$padding_formulario : 1.5rem; //de todos los formularios
+
+$margin_basico      : 4rem; //encabezado del ingreso
+
+$grid_gap          : 2px;
+
+/*------------ MIXIN ------------*/
+
+@mixin Fondo(){ 
+    background-color: $color_fondo;     
+}
+@mixin FondoBlanco(){ 
+    background-color: $color_blanco;   
+}
+@mixin FondoPrincipal(){ 
+    background-color: $color_principal;     
+}
+@mixin FondoSecundario(){ 
+    background-color: $color_secundario;     
+}
+@mixin FondoNavegador(){
+    @include FondoPrincipal();
+}

@@ -1,0 +1,92 @@
+@import "_paleta.scss";
+
+/*----------DISPLAY----------*/
+
+@mixin Block(){
+    display : block;    
+}
+@mixin InlineBlock(){
+    display : inline-block;
+}
+@mixin Grid($template){
+    display : grid;
+    grid-template : $template;
+    grid-gap: $grid_gap;
+}
+@mixin FlexColumnas(){
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+@mixin FlexFilas(){
+    display : flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+/*----------POSICION----------*/
+
+@mixin Relativo(){
+    position: absolute;    
+}
+@mixin RelativoIzquierda(){
+    position: relative;
+    float: left;
+}
+@mixin RelativoCompleto(){
+   @include RelativoIzquierda();
+   @include PosSize(0,0,100%,100%);
+}
+
+@mixin Absoluto(){
+    position: absolute;    
+}
+@mixin AbsolutoIzquierda(){
+    position: absolute;
+    float: left;
+}
+@mixin AbsolutoCompleto(){
+   @include AbsolutoIzquierda();
+   @include PosSize(0,0,100%,100%);
+}
+
+@mixin Fixed(){
+    position: fixed;    
+}
+@mixin FixedIzquierda(){
+    position: fixed;
+    float: left;
+}
+@mixin FixedCompleto(){
+   @include FixedIzquierda();
+   @include PosSize(0,0,100%,100%);
+}
+
+/*----------LIMPIAR----------*/
+
+@mixin Limpiar(){
+    padding: 0;
+    margin:  0;
+    border:  none;
+    outline: none;
+}
+@mixin LimpiarB(){
+    border: none;
+}
+
+/*----------POSICION Y SIZE----------*/
+
+@mixin Size($ancho,$largo){
+    width: $ancho;
+    height: $largo;
+}
+@mixin Pos($left,$top){
+    left: $left;
+    top: $top;
+}
+@mixin PosSize($left,$top,$ancho,$largo){
+    @include Pos($left,$top);
+    @include Size($ancho,$largo);
+}

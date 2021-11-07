@@ -1,0 +1,713 @@
+@import "_paleta.scss";
+@import "_herramientas.scss";
+
+/*----------HTML----------*/
+
+*{    
+    box-sizing: border-box;
+}
+
+iframe{
+    
+    border: 1px solid $color_principal;
+    border-radius: $borde_radio;
+    
+}
+body{  
+       
+   font-family: 'Inconsolata', monospace;
+    
+   @include Limpiar();
+   @include Block();           
+   
+   background-color: $color_blanco;
+   color:            $color_info;
+
+   overflow-x: hidden;
+
+}
+
+button:focus{
+    outline: none;
+}
+
+h1{    
+    font-size: clamp(16px,6vh,37px);    
+}
+h2{    
+    font-size: clamp(15px,5vh,32px);    
+}
+h3{    
+    font-size: clamp(14px,4vh,27px);    
+}
+h4{    
+    font-size: clamp(13px,3vh,22px);    
+}
+h5{    
+    font-size: clamp(12px,2vh,17px);    
+}
+
+p{    
+    font-size: clamp(11px,3vh,17px);    
+}
+
+label{
+    color: $color_secundario;    
+}
+
+//ELEMENTOS UNICOS
+h1.nombre{    
+    font-size: clamp(20px,10vw,60px);    
+}
+
+/*----------VENTANA DE CARGA----------*/
+
+#ventana-carga{
+    
+    z-index: 100;
+    
+    @include Fixed();     
+    @include PosSize(0,0,100vw,100vh);           
+    @include FondoPrincipal();
+    
+}
+
+/*---------- NAVEGACION ----------*/
+
+
+.navbar.fix {
+
+    @include FondoNavegador();
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9;
+    margin-top: 0;
+
+}
+
+/*----------SECCIONES PAGINAS----------*/
+
+.seccion-presentacion{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+    min-height: 100vh;
+    
+    @include FondoPrincipal();
+}
+.seccion-descripcion{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+    
+    @include Fondo();
+
+}
+.seccion-experiencia{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+
+    @include FondoSecundario();
+    
+}
+.seccion-proyectos{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+
+    @include FondoBlanco();
+    
+}
+.seccion-portafolioblog{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+
+    @include FondoPrincipal();
+    
+}
+.seccion-conocimientos{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+
+    @include FondoBlanco();
+    
+}
+.seccion-servicios{
+
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,auto); 
+
+    @include FondoSecundario();
+    
+}
+
+
+/*----------PANELES PAGINAS----------*/
+
+.panel-reset{
+    
+    @include Limpiar();            
+    @include Block();  
+    
+    @include FixedIzquierda();    
+    @include PosSize(0,0,100vw,100vh);
+    
+    background-color: $color_blanco;
+    
+}
+.panel-presentacion{
+    
+    @include Limpiar();            
+    @include Block();  
+            
+    @include Size(100%,100%);
+    
+    @include FondoPrincipal();   
+    
+}
+.panel-contacto{
+    
+    @include FixedIzquierda();
+    @include Size(auto,auto);
+    
+    right: -15px;
+    bottom: 0px;
+    
+}
+
+
+/*----------PANELES----------*/
+
+.panel-bas-abs, .panel-grid-abs{
+    
+    @include Limpiar();   
+    
+    @include Block();  
+    @include AbsolutoIzquierda();
+    
+}
+.panel-bas-rel, .panel-grid-rel{
+    
+    @include Limpiar();    
+    
+    @include Block();  
+    @include RelativoIzquierda();
+    
+}
+
+.panel-grid{
+    
+    @include Limpiar();        
+    @include Grid(auto 1fr auto / auto);
+   
+}
+.panel-form{
+
+    @include FlexFilas();
+    
+    padding : $padding_formulario;    
+    
+}
+
+.panel-presentacion{
+  
+    @include Limpiar();
+    @include Grid(1fr / 1fr auto);                  
+    @include Size(100%,auto);
+ 
+    overflow: hidden;
+}
+.panel-foto{
+    
+    @include Limpiar();
+    @include Size(auto,100%);
+   
+    overflow: hidden;    
+}
+.panel-perfil{
+    @include Limpiar();
+    @include Size(auto,50vh);
+    overflow: hidden;    
+}
+
+/*----------DOCUMENTOS y FORMS----------*/
+
+.img-foto{
+    
+   height: 100%;
+   width: auto;
+   float: right;
+}
+.form-control:focus {    
+    background-color: $color_blanco;
+    border-color:     $color_secundario;
+    outline: 0;
+    box-shadow: 0 0 0 0.1rem $color_form;
+}
+
+/*----------BOTONES----------*/
+
+.btn-basico {
+    
+    @include Limpiar();
+    @include Block();            
+    
+    background-color: rgba(0,0,0,0);                
+    
+    text-align:       center;                       
+          
+}
+.btn-logo {
+    
+    @include Limpiar();
+    @include Block();            
+    
+    margin: auto;
+    height: 100%;
+    width: auto;
+    
+    background-color: rgba(0,0,0,0);                
+    
+    text-align:       center;                       
+          
+}
+.btn-icono {
+    
+    @include Limpiar();
+    @include Block();            
+    
+    margin: auto;
+    height: 100%;
+    width: auto;
+    
+    background-color: rgba(0,0,0,0);                    
+    text-align:       center;                       
+          
+}
+.btn-borde{
+    
+    @include LimpiarB();    
+    @include Block();  
+    
+    margin: auto;
+    height: 100%;               
+    
+    background-color: rgba(0,0,0,0);       
+    
+    justify-content:  center;
+    text-align:       center;
+    
+}
+.btn-relleno{
+    
+    @include Limpiar();    
+    @include Block();  
+    
+    margin: auto;
+    height: 100%;                  
+    
+    color: $color_blanco;
+    
+    justify-content:  center;
+    text-align:       center;
+    
+}
+.btn-link{
+    
+    @include Limpiar();    
+    @include Block();  
+    
+    margin: auto;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0);                
+    
+    justify-content:  center;
+    text-align:       center;
+    
+        border: none !important;
+    box-shadow: none !important;    
+    text-decoration: none;
+    color: $color_info !important;
+    
+    &:hover {
+        color: $color_info !important;
+        text-decoration: underline;
+    }    
+    &:focus{
+        color: $color_principal !important;
+        text-decoration: underline;
+    }
+}
+
+/*----------TEXTO----------*/
+
+.txt-principal{
+    color: $color_principal;
+}
+.txt-secundario{
+    color: $color_secundario;
+}
+.txt-terciario{
+    color: $color_terciario;
+}
+.txt-success{    
+    color: $color_success;    
+}
+.txt-error{    
+    color: $color_error;    
+}
+.txt-warning{    
+    color: $color_warning;    
+}
+.txt-info{    
+    color: $color_info;    
+}
+
+.txt-blanco{
+    color : $color_blanco;
+}
+.txt-negro{
+    color : $color_negro;
+}
+.txt-fondo{
+    color : $color_fondo;
+}
+
+.txt-centrado{
+   text-align: center;
+}
+.txt-izquierda{
+   text-align: left;
+}
+.txt-derecha{
+   text-align: right;
+}
+.txt-justificado{
+   text-align: justify;
+}
+
+p.txt-1{    
+    font-size: clamp(10px,3vw,13px);    
+}
+
+/*----------UTILIDADES----------*/
+
+.pointer{
+    cursor: pointer;
+}
+.z-9{
+    z-index: 9;
+}
+
+.p-cero{
+    padding: 0;    
+}
+.p-basico--4{
+    padding: $padding_basico*0.2;    
+    
+}
+.p-basico--3{
+    padding: $padding_basico*0.4;    
+}
+.p-basico--2{
+    padding: $padding_basico*0.6;    
+}
+.p-basico--1{
+    padding: $padding_basico*0.8;    
+}
+.p-basico{
+    padding: $padding_basico;    
+}
+.p-basico-1{
+    padding: $padding_basico*1.20;    
+}
+.p-basico-2{
+    padding: $padding_basico*1.40;    
+}
+.p-basico-3{
+    padding: $padding_basico*1.60;    
+}
+.p-basico-4{
+    padding: $padding_basico*1.80;    
+}
+.p-basico-5{
+    padding: $padding_basico*2;    
+}
+
+.pl-basico--4, .px-basico--4{
+    padding-left: $padding_basico*0.2;    
+}
+.pl-basico--3, .px-basico--3{
+    padding-left: $padding_basico*0.4;    
+}
+.pl-basico--2, .px-basico--2{
+    padding-left: $padding_basico*0.6;    
+}
+.pl-basico--1, .px-basico--1{
+    padding-left: $padding_basico*0.8;    
+}
+.pl-basico,    .px-basico{
+    padding-left: $padding_basico;    
+}
+.pl-basico-1,  .px-basico-1{
+    padding-left: $padding_basico*1.2;    
+}
+.pl-basico-2, .px-basico-2{    
+    padding-left: $padding_basico*1.4;
+}
+.pl-basico-3, .px-basico-3{    
+    padding-left: $padding_basico*1.6;
+}
+.pl-basico-4, .px-basico-4{    
+    padding-left: $padding_basico*1.8;
+}
+.pl-basico-5, .px-basico-5{    
+    padding-left: $padding_basico*2;
+}
+
+
+
+.pr-basico--4, .px-basico--4{
+    padding-right: $padding_basico*0.2;    
+}
+.pr-basico--3, .px-basico--3{
+    padding-right: $padding_basico*0.4;    
+}
+.pr-basico--2, .px-basico--2{
+    padding-right: $padding_basico*0.6;    
+}
+.pr-basico--1, .px-basico--1{
+    padding-right: $padding_basico*0.8;    
+}
+.pr-basico,    .px-basico{
+    padding-right: $padding_basico;    
+}
+.pr-basico-1,  .px-basico-1{
+    padding-right: $padding_basico*1.2;    
+}
+.pr-basico-2, .px-basico-2{    
+    padding-right: $padding_basico*1.4;
+}
+.pr-basico-3, .px-basico-3{    
+    padding-right: $padding_basico*1.6;
+}
+.pr-basico-4, .px-basico-4{    
+    padding-right: $padding_basico*1.8;
+}
+.pr-basico-5, .px-basico-5{    
+    padding-right: $padding_basico*2;
+}
+
+
+.pb-basico--4, .py-basico--4{
+    padding-bottom: $padding_basico*0.2;    
+}
+.pb-basico--3, .py-basico--3{
+    padding-bottom: $padding_basico*0.4;    
+}
+.pb-basico--2, .py-basico--2{
+    padding-bottom: $padding_basico*0.6;    
+}
+.pb-basico--1, .py-basico--1{
+    padding-bottom: $padding_basico*0.8;    
+}
+.pb-basico,    .py-basico{    
+    padding-bottom: $padding_basico;
+}
+.pb-basico-1, .py-basico-1{    
+    padding-bottom: $padding_basico*1.2;
+}
+.pb-basico-2, .py-basico-2{    
+    padding-bottom: $padding_basico*1.4;
+}
+.pb-basico-3, .py-basico-3{    
+    padding-bottom: $padding_basico*1.6;
+}
+.pb-basico-4, .py-basico-4{    
+    padding-bottom: $padding_basico*1.8;
+}
+.pb-basico-5, .py-basico-5{    
+    padding-bottom: $padding_basico*2;
+}
+
+.pt-basico--4, .py-basico--4{
+    padding-top: $padding_basico*0.2;    
+}
+.pt-basico--3, .py-basico--3{
+    padding-top: $padding_basico*0.4;    
+}
+.pt-basico--2, .py-basico--2{
+    padding-top: $padding_basico*0.6;    
+}
+.pt-basico--1, .py-basico--1{
+    padding-top: $padding_basico*0.8;    
+}
+.pt-basico, .py-basico{    
+    padding-top: $padding_basico;
+}
+.pt-basico-1, .py-basico-1{    
+    padding-top: $padding_basico*1.2;
+}
+.pt-basico-2, .py-basico-2{    
+    padding-top: $padding_basico*1.4;
+}
+.pt-basico-3, .py-basico-3{    
+    padding-top: $padding_basico*1.6;
+}
+.pt-basico-4, .py-basico-4{    
+    padding-top : $padding_basico*1.8;
+}
+.pt-basico-5, .py-basico-5{    
+    padding-top : $padding_basico*2;
+}
+
+
+.b-simple-principal{        
+    border: $color_principal solid $borde_width*0.25;
+}
+.b-principal{        
+    border: $color_principal solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-secundario{    
+    border: $color_secundario solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-terciario{    
+    border: $color_terciario solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-success{    
+    border: $color_success solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-error{    
+    border: $color_error solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-warning{    
+    border: $color_warning solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-info{    
+    border: $color_info solid $borde_width;
+    border-radius: $borde_radio;
+}
+.b-simple-blanco{    
+    border: $color_blanco solid $borde_width*0.25;    
+}
+
+.bb-principal{           
+    border-bottom: $color_principal solid $borde_width;
+}
+.bb-secundario{        
+    border-bottom: $color_secundario solid $borde_width;
+}
+.bb-terciario{        
+    border-bottom: $color_terciario solid $borde_width;
+}
+.bb-success{        
+    border-bottom: $color_success solid $borde_width;
+}
+.bb-error{        
+    border-bottom: $color_error solid $borde_width;
+}
+.bb-warning{    
+    border-bottom: $color_warning solid $borde_width;
+}
+.bb-info{        
+    border-bottom: $color_info solid $borde_width;
+}
+.bb{        
+    border-bottom: rgba(0,0,0,1) solid $borde_width;
+}
+.bb--1{        
+    border-bottom: rgba(0,0,0,0.8) solid $borde_width;
+}
+.bb--2{        
+    border-bottom: rgba(0,0,0,0.6) solid $borde_width;
+}
+.bb--3{        
+    border-bottom: rgba(0,0,0,0.4) solid $borde_width;
+}
+.bb--4{        
+    border-bottom: rgba(0,0,0,0.2) solid $borde_width;
+}
+
+
+.b-redondeo{
+    border-radius: $borde_radio;
+}
+
+.m-basico{
+    margin: $margin_basico;
+}
+.mt-basico{
+    margin-top: $margin_basico
+}
+.mt-basicoi,.my-basicoi{
+    margin-top: $margin_basico !important
+}
+.mb-basico{
+    margin-bottom: $margin_basico
+}
+.mb-basicoi,.my-basicoi{
+    margin-bottom: $margin_basico !important
+}
+
+.m-cero{
+    margin: 0px;
+}
+
+.bkg-principal{        
+    background-color: $color_principal;    
+}
+.bkg-secundario{    
+    background-color: $color_secundario;    
+}
+.bkg-terciario{    
+    background-color: $color_terciario;    
+}
+.bkg-success{    
+    background-color: $color_success;    
+}
+.bkg-error{    
+    background-color: $color_error;    
+}
+.bkg-warning{    
+    background-color: $color_warning;    
+}
+.bkg-info{    
+    background-color: $color_info;    
+}
+.bkg-imagen{    
+    background-color: $color_imagen;    
+}
+
+.bkg-fondo{
+    background-color: $color_fondo;
+}
+.bkg-blanco{
+    background-color: $color_blanco;
+}
