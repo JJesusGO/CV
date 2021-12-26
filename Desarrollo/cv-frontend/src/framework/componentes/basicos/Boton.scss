@@ -1,0 +1,94 @@
+@import '../../styles/_paleta';
+@import '../../styles/_herramientas';
+
+.btn{
+
+    &-basico {
+    
+        @include Limpiar();
+        @include Block();            
+        
+        background-color: rgba(0,0,0,0);                
+        
+        text-align:       center;                       
+              
+    }
+    &-logo {
+        
+        @include Limpiar();
+        @include Block();            
+        
+        height: 100%;
+        width: auto;
+        
+        background-color: rgba(0,0,0,0);                
+        
+        text-align:       center;                       
+              
+    }
+    &-icono {
+        
+        @include Limpiar();
+        @include Block();            
+        
+        height: 100%;
+        width: auto;
+        
+        background-color: rgba(0,0,0,0);                    
+        text-align:       center;                       
+              
+    }
+    &-borde{
+        
+        @include LimpiarB();    
+        @include Block();  
+        
+        height: 100%;               
+        
+        background-color: rgba(0,0,0,0);       
+        
+        justify-content:  center;
+        text-align:       center;
+        
+    }
+    &-relleno{
+        
+        @include Limpiar();    
+        @include Block();  
+        
+        height: 100%;                  
+        
+        color: $color_blanco;
+        
+        justify-content:  center;
+        text-align:       center;
+        
+    }
+    &-link{
+        
+        @include Limpiar();    
+        @include Block();  
+        
+        height: 100%;
+    
+        background-color: rgba(0,0,0,0);                
+        
+        justify-content:  center;
+        text-align:       center;
+        
+        border: none !important;
+        box-shadow: none !important;    
+        text-decoration: none;
+        color: $color_info !important;
+        
+        &:hover {
+            color: $color_info !important;
+            text-decoration: underline;
+        }    
+        &:focus{
+            color: $color_principal !important;
+            text-decoration: underline;
+        }
+    }
+
+}
