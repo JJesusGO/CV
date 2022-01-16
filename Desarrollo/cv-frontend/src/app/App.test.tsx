@@ -2,6 +2,9 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import App from './App';
 
-test('render app', () => {
-  expect(render(<App />)).toBeDefined();
+describe('App', () => {
+  it('Se renderiza la App', () => {
+    expect(render(<App />)).toBeDefined();
+  });
 });
+

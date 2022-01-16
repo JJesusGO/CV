@@ -1,5 +1,5 @@
-import Boton, { BotonTipo } from '../framework/componentes/basicos/Boton';
-import { PaletaColor } from '../framework/componentes/types';
+import Boton, { BotonTipo } from '../react-framework/componentes/basicos/Boton';
+import { PaletaColor } from '../react-framework/componentes/types';
 
 function App() {
   return (
@@ -8,7 +8,6 @@ function App() {
              color={PaletaColor.PRINCIPAL}
              className='px-5 py-1 mx-auto my-1 txt-principal'
              onClick={()=>{console.log('HOLA MUNDO')}}
-             width={'75%'}
       >
         Boton
       </Boton>
