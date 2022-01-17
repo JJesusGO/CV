@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Panel, { PanelTipo } from '../react-framework/componentes/basicos/Panel';
 import Modal, { ModalContenido, ModalContenidoTipo, ModalDialog, ModalTipo} from '../react-framework/componentes/basicos/Modal';
 import { useState } from 'react';
+import Multiplexor from '../react-framework/componentes/basicos/Multiplexor';
 
 const Botonazo = styled(Boton)`
   color:black !important;
@@ -27,7 +28,8 @@ const Panelazo = styled(Panel)`
 `;
 
 function App() {
-  const [enable, setEnable] = useState(true)
+  const [enable, setEnable] = useState(true);
+  const [index, setIndex] = useState(0);
   return (
     <div className="App">
       <Panelazo tipo={PanelTipo.FLEX} className="flex-column" breakpoint='sm'>
@@ -49,10 +51,15 @@ function App() {
       <Modal tipo={ModalTipo.BASICO} enable={enable} onClose={()=>setEnable(false)}>
         <ModalDialog breakpoint='lg'>
           <ModalContenido tipo={ModalContenidoTipo.HEADER} className="bkg-blanco">
-            <h1>HEADER</h1>
+            <Panel tipo={PanelTipo.FLEX}>
+              <Boton tipo={BotonTipo.RELLENO} onClick={()=>setIndex(0)} className='px-5 py-1 mx-2'>1</Boton>
+              <Boton tipo={BotonTipo.RELLENO} onClick={()=>setIndex(1)} className='px-5 py-1 mx-2'>2</Boton>
+            </Panel>
           </ModalContenido>          
           <ModalContenido tipo={ModalContenidoTipo.BODY} className="bkg-blanco">
-            <h1>CONTENIDO</h1>
+            <Multiplexor index={index}>
+              {["Prueba 1", "Prueba 2"]}
+            </Multiplexor>            
           </ModalContenido>          
           <ModalContenido tipo={ModalContenidoTipo.FOOTER} className="bkg-blanco">
             <h1>FOOTER</h1>
