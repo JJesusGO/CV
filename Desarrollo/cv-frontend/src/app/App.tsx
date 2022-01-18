@@ -2,9 +2,10 @@ import Boton, { BotonTipo } from '../react-framework/componentes/basicos/Boton';
 import { PaletaColor } from '../react-framework/componentes/types';
 import styled from 'styled-components';
 import Panel, { PanelTipo } from '../react-framework/componentes/basicos/Panel';
-import Modal, { ModalContenido, ModalContenidoTipo, ModalDialog, ModalTipo} from '../react-framework/componentes/basicos/Modal';
+import Modal, { ModalContenido, ModalContenidoTipo, ModalDialog, ModalTipo} from '../react-framework/componentes/compuestos/Modal';
 import { useState } from 'react';
 import Multiplexor from '../react-framework/componentes/basicos/Multiplexor';
+import Nav, { NavItem, NavItemTipo, NavTipo } from '../react-framework/componentes/compuestos/Nav';
 
 const Botonazo = styled(Boton)`
   color:black !important;
@@ -24,15 +25,33 @@ const Botonazo = styled(Boton)`
 `;
 
 const Panelazo = styled(Panel)`
-  background-color: #c28c3c;
+  background-color: #3c86c2;
 `;
 
 function App() {
   const [enable, setEnable] = useState(true);
   const [index, setIndex] = useState(0);
+  const [tab, setTab] = useState(0);
+  const getNavItems = (): NavItem[]=>{
+    return [
+      {
+        key: "1",
+        tipo: NavItemTipo.ITEM,
+        children: <h5 className='txt-blanco'>Link 1</h5>,
+      },
+      {
+        key: "2",
+        tipo: NavItemTipo.ITEM,
+        children: <h5 className='txt-blanco'>Link 2</h5>,
+      }
+    ];
+  }
   return (
     <div className="App">
       <Panelazo tipo={PanelTipo.FLEX} className="flex-column" breakpoint='sm'>
+        <Nav tipo={NavTipo.PILLS} index={tab} onSelect={(index)=>setTab(index)}>
+          {getNavItems()}
+        </Nav>
         <Botonazo tipo={BotonTipo.LINK}
               color={PaletaColor.PRINCIPAL}
               className='px-5 py-1 mx-auto my-1 txt-principal'
@@ -58,7 +77,9 @@ function App() {
           </ModalContenido>          
           <ModalContenido tipo={ModalContenidoTipo.BODY} className="bkg-blanco">
             <Multiplexor index={index}>
-              {["Prueba 1", "Prueba 2"]}
+              {["Prueba 1", "Prueba 2"].map((text,index)=>{
+                return <h1 key={`key.${index}`}>Item : {text}</h1>
+              })}
             </Multiplexor>            
           </ModalContenido>          
           <ModalContenido tipo={ModalContenidoTipo.FOOTER} className="bkg-blanco">
