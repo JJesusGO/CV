@@ -6,6 +6,7 @@ import Modal, { ModalContenido, ModalContenidoTipo, ModalDialog, ModalTipo} from
 import { useState } from 'react';
 import Multiplexor from '../react-framework/componentes/basicos/Multiplexor';
 import Nav, { NavItem, NavItemTipo, NavTipo } from '../react-framework/componentes/compuestos/Nav';
+import Fila, { ColumnaItem } from '../react-framework/componentes/compuestos/Fila';
 
 const Botonazo = styled(Boton)`
   color:black !important;
@@ -46,6 +47,34 @@ function App() {
       }
     ];
   }
+  const getColumnas = (): ColumnaItem[]=>{
+    return [
+      {
+        key: "1",
+        md: {
+          size: 3,
+          offset: 3
+        },
+        sm: 12,
+        children: <Botonazo tipo={BotonTipo.RELLENO} className='w-100'>Boton 1</Botonazo>,
+        className: 'px-1',
+      },
+      {
+        key: "2",
+        md: 3,
+        sm: 12,
+        children: <Botonazo tipo={BotonTipo.RELLENO} className='w-100'>Boton 2</Botonazo>,
+        className: 'px-1',
+      },
+      {
+        key: "3",
+        md: 3,
+        sm: 12,
+        children: <Botonazo tipo={BotonTipo.RELLENO} className='w-100'>Boton 3</Botonazo>,
+        className: 'px-1',
+      },
+    ];
+  }
   return (
     <div className="App">
       <Panelazo tipo={PanelTipo.FLEX} className="flex-column" breakpoint='sm'>
@@ -65,8 +94,13 @@ function App() {
               onClick={()=>{console.log('HOLA MUNDO')}}
         >
           Boton
-        </Botonazo>
-      </Panelazo>            
+        </Botonazo>        
+      </Panelazo>  
+      <Panel tipo={PanelTipo.FLEX} className="justify-content-center">
+        <Fila className="w-75">
+            {getColumnas()}
+        </Fila>          
+      </Panel>      
       <Modal tipo={ModalTipo.BASICO} enable={enable} onClose={()=>setEnable(false)}>
         <ModalDialog breakpoint='lg'>
           <ModalContenido tipo={ModalContenidoTipo.HEADER} className="bkg-blanco">
